@@ -57,11 +57,16 @@ h4 {
 }
 
 .cards-home {
-    border: 0.5px solid #1a1a1a;
+    transition: box-shadow .3s;
+    border: 0.3px solid #1a1a1a;
     border-radius: 1%;
     height: 600px;
     overflow-y: scroll;
     width: 75%;
+}
+
+.cards-home:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .5);
 }
 
 .image-container {
@@ -86,11 +91,6 @@ h4 {
     position: relative;
 }
 
-.post-head-img {
-    position: relative;
-    overflow: hidden;
-}
-
 .post-link {
     text-decoration: none;
     color: #1a1a1a;
@@ -102,11 +102,13 @@ h4 {
 }
 
 .post-title {
+    text-align: center;
     color: #1a1a1a;
     font-size: 3rem;
 }
 
 .post-subtitle {
+    text-align: center;
     color: #1a1a1a;
     font-size: 1rem;
 }
