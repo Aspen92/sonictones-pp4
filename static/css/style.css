@@ -57,16 +57,16 @@ h4 {
 }
 
 .cards-home {
-    transition: box-shadow .3s;
-    border: 0.3px solid #1a1a1a;
+    border: 0.1px solid #1a1a1a;
     border-radius: 1%;
     height: 600px;
     overflow-y: scroll;
     width: 75%;
+    transition: transform .2s;
 }
 
 .cards-home:hover {
-    box-shadow: 0 0 11px rgba(33, 33, 33, .5);
+    transform: scale(1.03);
 }
 
 .image-container {
@@ -114,18 +114,19 @@ h4 {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
-    color: #fff;
+    background-color: #1a1a1a;
+    color: #f7f7f7;
+    transition: transform .2s;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    color: #6b6b6b;
+    transform: scale(1.03);
 }
 
 .link {
-    color: #23BBBB;
+    color: #1a1a1a;
     text-decoration: none;
 }
 
@@ -136,14 +137,14 @@ h4 {
 }
 
 .btn-like {
-    color: #E84610;
+    color: #e81010;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #e81010;
     background: transparent;
     border: none;
 }
