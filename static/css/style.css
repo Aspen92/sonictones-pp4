@@ -67,14 +67,21 @@ h4 {
 
 .cards-home {
     border-radius: 1%;
-    height: 600px;
-    overflow-y: scroll;
+    /* height: 600px; */
+    /* overflow-y: scroll; */
     width: 75%;
+    margin-bottom: 2rem;
     transition: transform .2s;
 }
 
 .cards-home:hover {
     transform: scale(1.03);
+}
+
+.card-footer {
+    background-color: #f7f7f7;
+    position: sticky;
+    top: 100%;
 }
 
 .image-container {

@@ -10,7 +10,7 @@
         <div class="col-12 mt-3 mb-3 left">
             <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-4">
+                <div class="col-md-4 card-group">
                     <div class="card mb-4 d-flex align-items-center">
                         <div class="card-body cards-home border">
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
@@ -24,10 +24,12 @@
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} | <i
-                                    class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+                            <!-- <hr /> -->
+                            <div class="card-footer mt-auto">
+                                <p class="card-text text-muted h6"><small>{{ post.author }} | {{ post.created_on}} | <i
+                                            class="far fa-heart"></i>
+                                        {{ post.number_of_likes }}</small></p>
+                            </div>
                         </div>
                     </div>
                 </div>
