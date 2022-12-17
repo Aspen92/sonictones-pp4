@@ -15,18 +15,18 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-1 left  top">
-            <div class="image-container text-center">
-                {% if "placeholder" in post.featured_image.url %}
-                <img class="post-img-top" src="">
-                {% else %}
-                <img class="post-img-top" src=" {{ post.featured_image.url }}">
-                {% endif %}
-            </div>
-            <div class="card-body">
+        <div class="card-body">
+            <div class="col card mb-4  mt-1 left  top">
+                <div class="image-container text-center">
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img class="post-img-top" src="">
+                    {% else %}
+                    <img class="post-img-top" src=" {{ post.featured_image.url }}">
+                    {% endif %}
+                </div>
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text">
+                <p class="card-text mt-4">
                     {{ post.content | safe }}
                     <!-- Post author and post created date -->
                     <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
