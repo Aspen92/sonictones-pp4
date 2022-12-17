@@ -53,8 +53,11 @@ h4 {
 }
 
 .blog-heading {
+    margin-bottom: 30px;
+}
+
+.alert-msg-top {
     margin-top: 100px;
-    margin-bottom: 50px;
 }
 
 .card {
@@ -77,11 +80,6 @@ h4 {
 
 .image-container {
     position: relative;
-}
-
-.author {
-    color: white margin: 4px;
-    text-transform: uppercase;
 }
 
 .post-head {
@@ -117,12 +115,8 @@ h4 {
     text-align: center;
     color: #1a1a1a;
     font-size: 1rem;
+    font-family: 'Playfair Display', serif;
 }
-
-/* .btn-page-swap {
-    background-color: #1a1a1a;
-    color: #f7f7f7;
-} */
 
 .btn-signup {
     background-color: #1a1a1a;

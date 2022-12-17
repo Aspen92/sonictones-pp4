@@ -7,9 +7,7 @@
         <div class="row g-0">
             <div class="col-12 post-head-text">
                 <!-- Post title -->
-                <h1 class="post-title">{{ post.title }}</h1>
-                <!-- Post author and post created date -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <h1 class="post-title blog-heading">{{ post.title }}</h1>
             </div>
         </div>
     </div>
@@ -17,7 +15,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4  mt-1 left  top">
             <div class="image-container text-center">
                 {% if "placeholder" in post.featured_image.url %}
                 <img class="post-img-top" src="">
@@ -26,14 +24,14 @@
                 {% endif %}
             </div>
             <div class="card-body">
-                <a href="#" class="btn btn-outline-primary">Add To Favourites</a>
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text">
                     {{ post.content | safe }}
+                    <!-- Post author and post created date -->
+                    <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 </p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}

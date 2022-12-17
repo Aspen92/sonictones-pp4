@@ -64,9 +64,10 @@
             </div>
         </div>
     </nav>
+
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-8 offset-md-2 alert-msg-top">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible fade show alert-dark" id="msg" role="alert">
                     {{ message | safe }}
@@ -78,7 +79,6 @@
     </div>
 
     <main class="flex-shrink-0 main-bg">
-
         {% block content %}
         <!-- Content -->
         {% endblock content %}
