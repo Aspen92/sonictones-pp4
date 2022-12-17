@@ -10,16 +10,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Up" %}</h3>
+      <h3 class="blog-heading">{% trans "Sign Up" %}</h3>
 
       <p>{% blocktrans %}Welcome to <strong>sonictones!</strong> <br> You can become a member that
         will
         give you access to
         the comment and
-        like function on the blog. <br> If you're already a member please sign in instead. <br> <br> <a class="link"
-          href="{{ login_url }}"><button class="btn btn-signup right" type="button">
+        like function on the blog. <br> If you're already a member please <a class="link" href="{{ login_url }}"><button
+            class="btn btn-signup right" type="button">
             Sign
-            in</button></a>{% endblocktrans %}</p>
+            In</button></a> instead.{% endblocktrans %}</p>
     </div>
   </div>
   <div class="row">

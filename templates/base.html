@@ -32,7 +32,7 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">sonictones</span></a>
             <button class="navbar-toggler navbar-light bg-light" type="button" data-bs-toggle="collapse"
@@ -47,11 +47,11 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
@@ -84,9 +84,18 @@
         {% endblock content %}
     </main>
 
+
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">&copy;Aspen92</p>
+    <footer class="footer mt-auto dark-bg">
+        <!-- Social media -->
+        <section class="mb-1 mt-2 text-center">
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+            <p class="text-white small">&copy;Aspen92</p>
+        </section>
     </footer>
     <script>
         setTimeout(function () {
