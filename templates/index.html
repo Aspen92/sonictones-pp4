@@ -12,7 +12,7 @@
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4 d-flex align-items-center">
-                        <div class="card-body cards-home">
+                        <div class="card-body cards-home border">
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <div class="image-container">
                                     {% if "placeholder" in post.featured_image.url %}
