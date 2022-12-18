@@ -21,6 +21,9 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
+        bookmarked = False
+        if post.bookmarks.filter(id=self.request.user.id).exists():
+            bookmarked = True
 
         return render(
             request,
@@ -30,6 +33,7 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": False,
                 "liked": liked,
+                "bookmarked": bookmarked,
                 "comment_form": CommentForm()
             },
         )

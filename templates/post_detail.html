@@ -24,6 +24,22 @@
                     <img class="post-img-top" src=" {{ post.featured_image.url }}">
                     {% endif %}
                 </div>
+
+                {% if user.is_authenticated %}
+                <form class="d-inline mt-2" action="{% url 'post_bookmarks' post.slug %}" method="POST">
+                    {% csrf_token %}
+                    {% if bookmarked %}
+                    <button type="submit" name="blogpost_id" value="{{post.slug}}"
+                        class="btn btn-success mx-auto">Bookmarked
+                        <br>
+                        <i class="fa-solid fa-bookmark"></i></button>
+                    {% else %}
+                    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn btn-dark mx-auto">Bookmark
+                        <br> <i class="fa-regular fa-bookmark"></i></button>
+                    {% endif %}
+                </form>
+                {% endif %}
+
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text mt-4">
@@ -31,6 +47,7 @@
                     <!-- Post author and post created date -->
                     <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 </p>
+
                 <div class="row">
                     <div class="col-1">
                         <strong>
@@ -51,30 +68,6 @@
                             <!-- The number of likes goes before the closing strong tag -->
                             <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
-
-
-
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'post_bookmarks' post.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}"
-                                    class="btn-like">hej</button>
-                                {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}"
-                                    class="btn-like">hej</button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="far fa-star"></i></span>
-                            {% endif %}
-                            <!-- The number of likes goes before the closing strong tag -->
-                            <!-- <span class="text-secondary">{{ post.number_of_likes }} </span> -->
-                        </strong>
-
-
-
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
@@ -116,7 +109,7 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later -->
+                <!-- comment -->
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
