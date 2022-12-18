@@ -85,4 +85,4 @@ def About(request):
 def search_post(request):
     search_term = request.GET.get('search_term')
     post_list = Post.objects.filter(title__icontains=search_term)
-    return render(request, 'index.html', {'post_list': post_list})
+    return render(request, 'search.html', {'post_list': post_list})
