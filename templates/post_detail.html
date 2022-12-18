@@ -51,6 +51,30 @@
                             <!-- The number of likes goes before the closing strong tag -->
                             <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
+
+
+
+                        <strong>
+                            {% if user.is_authenticated %}
+                            <form class="d-inline" action="{% url 'post_bookmarks' post.slug %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}"
+                                    class="btn-like">hej</button>
+                                {% else %}
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}"
+                                    class="btn-like">hej</button>
+                                {% endif %}
+                            </form>
+                            {% else %}
+                            <span class="text-secondary"><i class="far fa-star"></i></span>
+                            {% endif %}
+                            <!-- The number of likes goes before the closing strong tag -->
+                            <!-- <span class="text-secondary">{{ post.number_of_likes }} </span> -->
+                        </strong>
+
+
+
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}

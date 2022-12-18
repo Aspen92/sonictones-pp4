@@ -49,6 +49,9 @@
                     <li class="nav-item">
                         <a class="nav-link link-secondary" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-secondary" href="{% url 'view_bookmarks' %}">Bookmarks</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link link-secondary" href="{% url 'account_login' %}">Log In</a>
@@ -61,10 +64,11 @@
                         <a class="nav-link link-secondary" href="{% url 'about' %}">About</a>
                     </li>
                 </ul>
+
                 <form method="GET" action="{% url 'search_post' %}" class="d-flex">
                     <div class="col-xs-2 col-sm-6 col-md-6 col-lg-12 d-flex">
                         <input class="form-control" type="text" name="search_term" placeholder="Search"
-                            aria-label="Search">
+                            aria-label="Search" required>
                         <button class="btn btn-light mx-2" type="submit">Search</button>
                     </div>
                 </form>

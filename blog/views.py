@@ -78,7 +78,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-def About(request):
+def about(request):
     return render(request, 'about.html', {})
     
 
@@ -86,3 +86,22 @@ def search_post(request):
     search_term = request.GET.get('search_term')
     post_list = Post.objects.filter(title__icontains=search_term)
     return render(request, 'search.html', {'post_list': post_list})
+
+
+class PostBookmark(View):
+    
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.bookmarks.filter(id=request.user.id).exists():
+            post.bookmarks.remove(request.user)
+        else:
+            post.bookmarks.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+def bookmark_list(request):
+    bookmark = Post.objects.filter(bookmarks=request.user.id)
+    return render(request,
+                  'bookmarks.html',
+                  {'bookmark': bookmark})
