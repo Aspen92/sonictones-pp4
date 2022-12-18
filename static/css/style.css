@@ -67,8 +67,6 @@ h4 {
 
 .cards-home {
     border-radius: 1%;
-    /* height: 600px; */
-    /* overflow-y: scroll; */
     width: 75%;
     margin-bottom: 2rem;
     transition: transform .2s;

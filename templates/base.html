@@ -15,6 +15,9 @@
         rel="stylesheet">
     <!-- FONT AWSOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- BOOTSTRAP -->
@@ -49,9 +52,7 @@
                     <li class="nav-item">
                         <a class="nav-link link-secondary" href="{% url 'account_logout' %}">Log Out</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link link-secondary" href="{% url 'view_bookmarks' %}">Bookmarks</a>
-                    </li>
+
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link link-secondary" href="{% url 'account_login' %}">Log In</a>
@@ -64,6 +65,12 @@
                         <a class="nav-link link-secondary" href="{% url 'about' %}">About</a>
                     </li>
                 </ul>
+
+                {% if user.is_authenticated %}
+                <a class="btn btn-light mx-4 btn-bookmarks" href="{% url 'view_bookmarks' %}" role="button">
+                    <i class="fa-regular fa-bookmark"></i></a>
+                {% else %}
+                {% endif %}
 
                 <form method="GET" action="{% url 'search_post' %}" class="d-flex">
                     <div class="col-xs-2 col-sm-6 col-md-6 col-lg-12 d-flex">
