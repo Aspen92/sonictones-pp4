@@ -61,6 +61,10 @@
                         <a class="nav-link link-secondary" href="{% url 'about' %}">About</a>
                     </li>
                 </ul>
+                <form method="GET" action="{% url 'search_post' %}">
+                    <input type="text" name="search_term" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </form>
             </div>
         </div>
     </nav>
