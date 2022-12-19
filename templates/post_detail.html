@@ -24,22 +24,18 @@
                     <img class="post-img-top" src=" {{ post.featured_image.url }}">
                     {% endif %}
                 </div>
-
                 {% if user.is_authenticated %}
                 <form class="d-inline mt-2" action="{% url 'post_bookmarks' post.slug %}" method="POST">
                     {% csrf_token %}
                     {% if bookmarked %}
-                    <button type="submit" name="blogpost_id" value="{{post.slug}}"
-                        class="btn btn-success mx-auto">Bookmarked
-                        <br>
+                    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn btn-success border p-3">
                         <i class="fa-solid fa-bookmark"></i></button>
                     {% else %}
-                    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn btn-dark mx-auto">Bookmark
-                        <br> <i class="fa-regular fa-bookmark"></i></button>
+                    <button type="submit" name="blogpost_id" value="{{post.slug}}"
+                        class="btn btn-light border-secondary p-3"><i class="fa-regular fa-bookmark"></i></button>
                     {% endif %}
                 </form>
                 {% endif %}
-
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text mt-4">
@@ -116,7 +112,6 @@
                 </div>
                 {% else %}
                 {% if user.is_authenticated %}
-
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
