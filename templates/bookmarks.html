@@ -19,9 +19,11 @@
                                 <!-- Display the post's featured image -->
                                 <div class="image-container">
                                     {% if "placeholder" in post.featured_image.url %}
-                                    <img class="card-img-top" src="">
+                                    <img class="card-img-top" src="/media/images/image-missing.jpg"
+                                        alt="image is missing!">
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                        alt="blog post image">
                                     {% endif %}
                                 </div>
                                 <!-- Display the post's title -->
