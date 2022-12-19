@@ -11,6 +11,5 @@ urlpatterns = [
     path('search.html', views.search_post, name='search_post'),
     path('about.html', views.about, name='about'),
     path('bookmarks.html', views.bookmark_list, name='view_bookmarks'),
-    path('bookmark/<slug:slug>', views.PostBookmark.as_view(), name=' \
-        post_bookmarks'),
+    path('bookmark/<slug:slug>', views.PostBookmark.as_view(), name='post_bookmarks'),
 ]
