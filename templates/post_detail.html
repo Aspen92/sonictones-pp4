@@ -2,11 +2,11 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+<!-- Display the post's title and featured image -->
 <div class="post-head">
     <div class="container">
         <div class="row g-0">
             <div class="col-12 post-head-text">
-                <!-- Post title -->
                 <h1 class="post-title blog-heading">{{ post.title }}</h1>
             </div>
         </div>
@@ -17,6 +17,7 @@
     <div class="row">
         <div class="card-body">
             <div class="col card mb-4  mt-1 left  top">
+                <!-- Display the post's featured image -->
                 <div class="image-container text-center">
                     {% if "placeholder" in post.featured_image.url %}
                     <img class="post-img-top" src="">
@@ -24,6 +25,7 @@
                     <img class="post-img-top" src=" {{ post.featured_image.url }}">
                     {% endif %}
                 </div>
+                <!-- Bookmark button for authenticated users -->
                 {% if user.is_authenticated %}
                 <form class="d-inline mt-2" action="{% url 'post_bookmarks' post.slug %}" method="POST">
                     {% csrf_token %}
@@ -36,23 +38,24 @@
                     {% endif %}
                 </form>
                 {% endif %}
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text mt-4">
+                    <!-- Display the post's content -->
                     {{ post.content | safe }}
-                    <!-- Post author and post created date -->
+                    <!-- Display the post's author and creation date -->
                     <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 </p>
 
                 <div class="row">
                     <div class="col-1">
                         <strong>
+                            <!-- Like button for authenticated users -->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
                                         class="fas fa-heart"></i></button>
+                                <!-- Like button for unauthenticated users -->
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
                                         class="far fa-heart"></i></button>
@@ -61,14 +64,14 @@
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                            <!-- The number of likes goes before the closing strong tag -->
+                            <!-- Display the number of likes for the post -->
                             <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
+                        <!-- Display the number of comments for the post -->
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
-                            <!-- Our total_comments variable goes before the closing strong tag -->
                             {{ total_comments }}</strong>
                         {% endwith %}
                     </div>
@@ -76,6 +79,7 @@
             </div>
         </div>
     </div>
+    <!-- Horizontal line to separate the post from the comments -->
     <div class="row">
         <div class="col">
             <hr>
@@ -83,34 +87,35 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
+            <!-- Comment section heading -->
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+                <!-- Display individual comments -->
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
+                    <!-- Display the comment's author -->
                     <p class="font-weight-bold">
-                        <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
                         {{ comment.name }}
+                        <!-- Display the comment's creation date -->
                         <span class=" text-muted font-weight-normal">
-                            <!-- The comment's created date goes here -->
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
-                    <!-- The body of the comment goes before the | -->
+                    <!-- Display the comment's content -->
                     {{ comment.body | linebreaks }}
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- comment -->
                 {% if commented %}
+                <!-- Alert message to the user that the comment is awaiting approval -->
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
                 </div>
                 {% else %}
+                <!-- Comment form for authenticated users -->
                 {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
