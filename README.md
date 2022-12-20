@@ -272,4 +272,95 @@ The remaning .py files (settings.py and env.py etc) have errors about lines bein
 ## Automated testing
 _Due to time constraints I unfortunately did not manage to add any automated test. I plan to do that in the future._
 
+## Manual Testing on smaller screen sizes
+The website was tested on all screen sizes (xl - desktop, l - laptop, m - iPad Air, sm - iPhone 12/iPhone 13).
 
+## Bugs
+### PEP8 Syntax errors
+- line too long
+
+In the code that I have written, I have followed the line length rule. However, in Django generated files like migrations. The migration files aren't generally going to be edited by humans so I feel comfortable leaving them as they are. So those errors are left as they are.
+
+## Deployment
+This project was developed in [GitPod](https://gitpod.io/) where everything was committed and pushed to [GitHub](https://github.com/). The Code Institute offered a [template](https://github.com/Code-Institute-Org/gitpod-full-template) that was used as a main structure for this repository. The main deployment was completed then on [Heroku](https://www.heroku.com/).
+See the process of the deployment below:
+
+### Step 1:
+_Installing Django and supporting libraries_
+
+1. Clone [this repository](https://github.com/Code-Institute-Org/gitpod-full-template)
+
+
+2. Install Django, supporting libraries and Cloudinary libraries using these commands in the terminal
+````
+pip3 install 'django<4' gunicorn
+pip3 install dj_database_url psycopg2
+pip3 install dj3-cloudinary-storage
+````
+
+3. Create requirements file using this command in the terminal
+`````
+pip3 freeze --local > requirements.txt
+`````
+
+4. Create project using this command in the terminal
+`````
+django-admin startproject YOUR_PROJECT_NAME .
+`````
+_(Don't forget the .)_
+
+5. Create app using this command in the terminal
+````
+python3 manage.py startapp YOUR_APP_NAME
+````
+
+6. Add installed apps to settings.py
+`````
+NSTALLED_APPS = [
+    …
+    'YOUR_APP_NAME',
+]
+`````
+
+7. Migrate Changes using this command in the terminal
+````
+python3 manage.py migrate
+````
+
+8. Run server to test using this command in the terminal
+````
+python3 manage.py runserver
+````
+
+### Step 2:
+_Create a new external database_
+
+1. Sign Up/Log In on [ElephantSQL](https://www.elephantsql.com/)
+
+2. Click "Create New Instance"
+
+3. Set up your plan
+- Give your plan a name
+- Select the Tiny Turtle (Free) plan
+- Tags field can be left blank
+
+4. Click "Select Region"
+- Select a data center near you
+
+5. Click "Review"
+- Check that your details are correct. Then click "Create instance"
+
+6. Go to ElephantSQL dashboard and click on your database project
+
+7. Copy your ElephantSQL database URL
+
+### Step 3:
+_Create a Heroku app_
+
+1. Sign Up/Log In on [Heroku](https://www.heroku.com/)
+
+2. From the dashboard click on "New" and create new Heroku App
+
+3. Enter your app name and your location
+
+4. 
