@@ -170,3 +170,36 @@ This Model represents a comment on a blog post and has the following fields -
 
 #### Bootstrap (5)
 [Bootstrap](https://getbootstrap.com/) was imported for responsiveness and styling of the website.
+
+### Development
+
+#### Django
+[Django](https://www.djangoproject.com/) was the web framework used to build this project.
+
+_Additional packages/libraries/applications that were used to build this project_ -
+
+- Django Crispy Forms
+[Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) was used to give forms improved styling in the project.
+
+- Summernote
+[Summernote](https://summernote.org/) was used for the admin section/create blog posts section of the project to change the standard Django Editor. To give the admin more options to customize blog posts in the editor.
+
+- Allauth
+[Allauth](https://django-allauth.readthedocs.io/en/latest/) was used to allow users to create accounts and log in. Allauth is a third-party Django application.
+
+## Hosting
+
+### Heroku
+[Heroku]() is used to host the application.
+
+### Gunicorn
+[Gunicorn]() is used for deploying the project to Heroku.
+
+### Cloudinary
+[Cloudinary]() is used to host media files and serve them to Heroku.
+
+### ElephantSQL
+[ElephantSQL]() is used to host my database. ElephantSQL is a cloud-based PostgreSQL database hosting service.
+
+## Testing
+
