@@ -532,6 +532,10 @@ ALLOWED_HOSTS = ['your_app_name.herokuapp.com', 'localhost']
 
 4. Remove DISABLE_COLLECTSTATIC
 
+5. On Heroku, go to Deploy tab and scroll to the bottom of the page and chose Deploy(Main branch)
+
+6. Click "View App" when the build is done.
+
 ## Credits
 
 ### Code
@@ -554,4 +558,4 @@ and the were an invaluable source of information throughout this project
 ### Acknowledgements
 - My friend Lucas Holm for his ongoing help with all kinds of smaller issues and feedback throughout the project.
 - My mentor, Antonio Rodriguez, at Code Institute, for continuous helpful feedback and support.
-- The always super friendly and helpful tutor support at Code Institute.
+- The always friendly and helpful tutor support at Code Institute.
