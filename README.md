@@ -363,4 +363,193 @@ _Create a Heroku app_
 
 3. Enter your app name and your location
 
-4. 
+4. Go to the settings tab
+
+5. Click on "Reveal Config Vars"
+
+6. Add a Config Var called DATABASE_URL
+- The value should be the ElephantSQL database URL
+
+### Step 4:
+_Attach the database_
+
+1. In GitPod create new file called env.py file on top level directory
+
+2. In the env.py add these lines of code:
+- Import os library
+````
+import os
+````
+- Set environment variables
+````
+os.environ["DATABASE_URL"] = "Paste in ElephantSQL database URL"
+````
+- Add secret key
+````
+os.environ["SECRET_KEY"] = "Make up your own randomSecretKey"
+````
+
+3. Go back to [Heroku](heroku.com)
+- Add your secret key to Config Vars - SECRET_KEY, “randomSecretKey”
+
+### Step 5:
+_Prepare your environment and settings.py file_
+
+1. In settings.py - reference env.py with this line of code:
+````
+from pathlib import Path
+import os
+import dj_database_url
+
+if os.path.isfile("env.py"):
+   import env
+````
+
+2. Remove the insecure secret key and replace - links to the SECRET_KEY variable on Heroku
+````
+SECRET_KEY = os.environ.get('SECRET_KEY')
+````
+
+3. Comment out the old ````DATABASES```` section.
+
+4. Add a new ````DATABASES```` section _(links to the DATATBASE_URL variable on Heroku)_:
+````
+DATABASES = {
+   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+````
+
+5. Save all the files and make migrations in the terminal using this:
+````
+python3 manage.py migrate
+````
+
+### Step 6:
+_Get your static and media files stored on [Cloudinary](https://cloudinary.com/):_
+
+1. Sign Up/Log In on [Cloudinary](https://cloudinary.com/) and copy your CLOUDINARY_URL from the Cloudinary dashboard.
+
+2. Add Cloudinary URL to env.py:
+````
+os.environ["CLOUDINARY_URL"] = "cloudinary://************************"
+````
+
+3. Go back to [Heroku](heroku.com) and add Cloudinary URL to Heroku Config Vars
+- COUDINARY_URL, cloudinary://************************
+
+4. Add DISABLE_COLLECTSTATIC to Heroku Config Vars:
+- DISABLE_COLLECTSTATIC, 1
+
+5. In the settings.py, add Cloudinary libraries to INSTALLED_APPS in this order:
+````
+INSTALLED_APPS = [
+    …,
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
+    …,
+]
+````
+
+6. Make Django use Cloudinary to store media and static files:
+````
+STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+````
+
+7. Link file to the templates directory in Heroku
+Place this under the BASE_DIR line:
+````
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+````
+
+8. Change the templates directory to TEMPLATES_DIR
+````
+TEMPLATES = [
+    {
+        …,
+        'DIRS': [TEMPLATES_DIR],
+       …,
+            ],
+        },
+    },
+]
+````
+
+9. Add Heroku Hostname to ALLOWED_HOSTS:
+````
+ALLOWED_HOSTS = ["PROJ_NAME.herokuapp.com", "localhost"]
+````
+
+### Step 7:
+
+1. In GitPod create 3 new folders on top level directory called:
+- media
+- static
+- templates
+
+2. Create a file called ````Procfile```` on the top level directory
+
+3. In the Procfile add this code:
+````
+web: gunicorn PROJ_NAME.wsgi
+````
+
+4. In the Terminal Add, commit and push your files:
+````
+git add .
+git commit -m “Deployment Commit”
+git push
+````
+
+5. In Heroku go to the deploy tab.
+
+6. Chose GitHub as deployment method and chose your repository.
+
+7. At the bottom of the page chose Deploy branch (from the main branch).
+
+## Production
+
+1. In your settings.py file, set DEBUG to False
+````
+DEBUG = False
+````
+
+2. Make sure that X_FRAME_OPTIONS and ALLOWED_HOSTS are added to your settings.py file.
+````
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+ALLOWED_HOSTS = ['your_app_name.herokuapp.com', 'localhost']
+````
+
+3. Go to Heroku, in Settings - Reveal Config Vars
+
+4. Remove DISABLE_COLLECTSTATIC
+
+## Credits
+
+### Code
+- The initial site functionality was made using the 'I Think There For I Blog' walkthrough by Matt Rudge via Code Institute. The code was adapted for what I needed.
+
+- The [Django Documentation](https://docs.djangoproject.com/en/4.1/) 
+and the were an invaluable source of information throughout this project
+
+- The [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/) was a big source of information when the styling of the website was created.
+
+-  This [video](https://www.youtube.com/watch?v=H4QPHLmsZMU) came in handy when I was building the Bookmark function of the blog.
+
+- This [video series](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) helped me throughout the project.
+
+### Content
+- The structure and layout of this README file was inspired by [kera-cudmore](https://github.com/kera-cudmore/readme-examples/blob/main/milestone1-readme.md)
+
+### Acknowledgements
+- My friend Lucas Holm for his ongoing help with all kinds of smaller issues and feedback throughout the project.
+- My mentor, Antonio Rodriguez, at Code Institute, for continuous helpful feedback and support.
+- The always super friendly and helpful tutor support at Code Institute.
