@@ -23,5 +23,8 @@
    "files.autoSave": "off",
    "workbench.colorTheme": "Shades of Purple (Super Dark)",
    "terminal.integrated.gpuAcceleration": "canvas",
-   "editor.defaultFormatter": "HookyQR.beautify"
+   "editor.defaultFormatter": "HookyQR.beautify",
+   "[markdown]": {
+      "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+   }
 }

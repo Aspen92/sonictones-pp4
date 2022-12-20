@@ -218,4 +218,21 @@ I checked the JavaScript file using [JSHint](https://jshint.com/)
 
 ### Python
 I checked for errors in these files: 
-- admin.py 
+- admin.py - _no errors_
+- apps.py - _no errors_
+- forms.py - _no errors_
+- models.py - _no errors_
+- tests.py - _no errors_
+- views.py - _no errors_
+
+The remaning .py files (settings.py and env.py etc) have errors about lines being too long, this cannot really be fixed.
+
+
+## Manual Testing
+
+### Home page/Navigation
+| Test        | Testing Performed        | Expected Outcome                 | Pass/Fail |
+|-------------|--------------------------|----------------------------------|-----------|
+| Navbar logo | Click "sonicetones" logo | Takes the user to the home page. | Pass      |
+
+
