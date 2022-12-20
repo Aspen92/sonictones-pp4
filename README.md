@@ -123,10 +123,13 @@ This Model represents a comment on a blog post and has the following fields -
 
 ## Technologies
 
+
 ### Workspace
+
 
 #### GitPod
 [GitPod](https://gitpod.io/) was the IDE workspace used to build this site.
+
 
 ### Version Control
 
@@ -136,9 +139,14 @@ This Model represents a comment on a blog post and has the following fields -
 #### GitHub
 [GitHub](https://github.com/) is used to store the project.
 
+
 ### Wireframing & ERD
 
 #### Figma
+[Figma](https://www.figma.com/) was used to create wireframes during the design process.
+
+#### Draw.io
+[Draw.io](draw.io) was used to create the ERD overview.
 
 
 ### Languages used
@@ -151,3 +159,14 @@ This Model represents a comment on a blog post and has the following fields -
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 #### Python
 - [Python](https://www.python.org/)
+
+## Website Design
+
+#### Google Fonts
+[Google Fonts](https://fonts.google.com/) was imported to change the font on the website.
+
+#### Font Awesome
+[Font Awesome](https://fontawesome.com/) was used on the website to add icons.
+
+#### Bootstrap (5)
+[Bootstrap](https://getbootstrap.com/) was imported for responsiveness and styling of the website.
