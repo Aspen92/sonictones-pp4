@@ -1,6 +1,6 @@
 <!-- Heading -->
 
-# sonicetones - [Live link]()
+# sonicetones - [Live link](https://sonictones-pp4.herokuapp.com/)
 
 _On sonicetones you will find reviews of the latest and greatest new music releases. Whether you are a casual listener or a die-hard music fan, I hope that you will find something here that resonates with you._
 
@@ -226,6 +226,9 @@ I checked for errors in these files:
 - views.py - _no errors_
 
 The remaning .py files (settings.py and env.py etc) have errors about lines being too long, this cannot really be fixed.
+
+### Lighthouse
+<!-- Lighthouse picture here -->
 
 
 ## Manual Testing
