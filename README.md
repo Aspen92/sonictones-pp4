@@ -1,6 +1,6 @@
 <!-- Heading -->
 
-# sonicetones - [Live link]()
+# sonicetones - [Live link](https://sonictones-pp4.herokuapp.com/)
 
 _On __sonicetones__ you will find reviews of the latest and greatest new music releases. Whether you are a casual listener or a die-hard music fan, I hope that you will find something here that resonates with you._
 
