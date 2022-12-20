@@ -190,16 +190,32 @@ _Additional packages/libraries/applications that were used to build this project
 ## Hosting
 
 ### Heroku
-[Heroku]() is used to host the application.
+[Heroku](https://www.heroku.com/) is used to host the application.
 
 ### Gunicorn
-[Gunicorn]() is used for deploying the project to Heroku.
+[Gunicorn](https://gunicorn.org/) is used for deploying the project to Heroku.
 
 ### Cloudinary
-[Cloudinary]() is used to host media files and serve them to Heroku.
+[Cloudinary](https://cloudinary.com/) is used to host media files and serve them to Heroku.
 
 ### ElephantSQL
-[ElephantSQL]() is used to host my database. ElephantSQL is a cloud-based PostgreSQL database hosting service.
+[ElephantSQL](https://www.elephantsql.com/) is used to host my database. ElephantSQL is a cloud-based PostgreSQL database hosting service.
 
 ## Testing
+The W3C Markup Validator, W3C CSS Validator Services, JSHint and PEP8 were used to validate the code to ensure there were no syntax errors in the project.
 
+### HTML
+I checked all the HTML pages using [W3C Markup Validation Service](https://validator.w3.org/)
+- No Errors were found.
+
+### CSS
+I checked the CSS file using [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+- No errors were found.
+
+### JavaScript
+I checked the JavaScript file using [JSHint](https://jshint.com/)
+- No Errors were found.
+
+### Python
+I checked for errors in these files: 
+- admin.py 
