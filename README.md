@@ -59,7 +59,7 @@ The main font used is called 'Playfair Display'
 ## Wireframes
 The first sketched wireframes of the blog can be seen below. The final look of the blog ended up being very close to these mockups.
 
-__[Wireframes](../sonictones-pp4/readme_files/Wireframes/)__
+__[Wireframes](./readme_files/Wireframes/All%20wireframes.png)__
 
 Under the wireframing process I gathered ideas for the design and features from the music reviews website called [Pitchfork](https://pitchfork.com/reviews/albums/).
 The wireframes were made in figma.
