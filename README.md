@@ -230,9 +230,46 @@ The remaning .py files (settings.py and env.py etc) have errors about lines bein
 
 ## Manual Testing
 
-### Home page/Navigation
-| Test        | Testing Performed        | Expected Outcome                 | Pass/Fail |
-|-------------|--------------------------|----------------------------------|-----------|
-| Navbar logo | Click "sonicetones" logo | Takes the user to the home page. | Pass      |
+### Home Page/Navigation/Footer
+| Test                                     | Testing Performed                           | Expected Outcome                                                                                                              | Pass/Fail |
+|------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Navbar logo                              | Click "sonicetones" logo                    | Takes the user to the home page.                                                                                              | Pass      |
+| Navbar Log in                            | Click link                                  | Takes the user to the Log In page.                                                                                            | Pass      |
+| Navbar Sign Up                           | Click link                                  | Takes the user to the Sign Up page.                                                                                           | Pass      |
+| Navbar Logout (when user is logged in)   | Click link                                  | Redirect user to Log Out page to confirm Log Out                                                                              | Pass      |
+| Navbar About                             | Click Link                                  | Redirects user to the about page                                                                                              | Pass      |
+| Navbar Bookmark (when user is logged in) | click icon/link                             | Redirect user to bookmarks page                                                                                               | Pass      |
+| Navbar Search Bar                        | Add keywords to input & click submit button | Redirect user to search page with search results                                                                              | Pass      |
+| Navbar small/medium screens              | Click hamburger icon                        | The Log In, Sign Up, Logout, about, bookmarks and search bar element are available and work the same way as on large screens. | Pass      |
+| Blog Posts(Home page)                    | Click on post                               | Redirects user to Post detailed page                                                                                          | Pass      |
+| Social Media Links/buttons               | Click social media links/buttons            | Redirects user to the LinkedIn & GitHub                                                                                       | Pass      |
+### Blog Post Detailed Page
+| Test                     | Testing Performed                                         | Expected Outcome                                  | Pass/Fail |
+|--------------------------|-----------------------------------------------------------|---------------------------------------------------|-----------|
+| Add Bookmark             | Click on bookmark icon                                    | Adds the chosen post to Bookmarks page            | Pass      |
+| Delete Bookmark          | Click on bookmark icon(when post is all ready bookmarked) | Deletes the chosen post from Bookmarks page       | Pass      |
+| Like Post                | Click on like button                                      | Adds a like to the chosen post                    | Pass      |
+| Unlike Post              | Click on like button(when post is all ready liked)        | Deletes the like from the chosen post             | Pass      |
+| Comment Form add comment | Enter text in to comment form and click submit            | Alert message "Your Comment is awaiting approval" | Pass      |
+| Comment Form Empty       | Leave comment form empty and click submit                 | "Please fill in this form" message                | Pass      |
+### Sign Up Page
+| Test                    | Testing Performed           | Expected Outcome                                                                                                                                                 | Pass/Fail |
+|-------------------------|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Sign Up form works      | Enter username/password     | The Django registration form is validating automatically if the username is valid and if the passwords match and are valid. Otherwise an error message is shown. | Pass      |
+| Log In Link             | Click                       | Takes the user to the Log In page.                                                                                                                               | Pass      |
+| Successful registration | Finish registration process | Success alert message appears. User is logged in automatically and redirected to home page.                                                                      | Pass      |
+### Log In Page
+| Test             | Testing Performed    | Expected Outcome                                                                                                          | Pass/Fail |
+|------------------|----------------------|---------------------------------------------------------------------------------------------------------------------------|-----------|
+| Log In           | Add credentials      | Django login form checks automatically that username and password match (and exist in DB). Otherwise shows error message. | Pass      |
+| Sign Up link     | click                | Takes the user to the Sign Up page.                                                                                       | Pass      |
+| Successful login | Finish login process | User is logged in and redirected to home page. Success alert messages appears.                                            | Pass      |
+### Log Out Page
+| Test           | Testing Performed | Expected Outcome                                                      | Pass/Fail |
+|----------------|-------------------|-----------------------------------------------------------------------|-----------|
+| Log Out button | Click             | Takes the user back to the home page. Success alert messages appears. | Pass      |
+
+## Automated testing
+_Due to time constraints I unfortunately did not manage to add any automated test. I plan to do that in the future._
 
 
