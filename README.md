@@ -73,7 +73,12 @@ Throughout the development process, the stories were constantly updated accordin
 <!-- databas image here -->
 -- 
 -- 
---
+### Database
+
+ - The database is a PostgreSQL database, hosted on [ElephantSQL](https://www.elephantsql.com/).
+
+- I used [DBeaver](https://dbeaver.io/) as an extra tool to have better overview of the database.
+
 ## Data Models
 
 ### Post model
