@@ -546,6 +546,8 @@ and the were an invaluable source of information throughout this project
 
 - This [video series](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) helped me throughout the project.
 
+- Django deployment instructions by [Code Institute](https://docs.google.com/document/d/1P5CWvS5cYalkQOLeQiijpSViDPogtKM7ZGyqK-yehhQ/edit)
+
 ### Content
 - The structure and layout of this README file was inspired by [kera-cudmore](https://github.com/kera-cudmore/readme-examples/blob/main/milestone1-readme.md)
 
