@@ -121,4 +121,33 @@ This Model represents a comment on a blog post and has the following fields -
 
 - Approved: a BooleanField that indicates whether the comment has been approved or not.
 
+## Technologies
 
+### Workspace
+
+#### GitPod
+[GitPod](https://gitpod.io/) was the IDE workspace used to build this site.
+
+### Version Control
+
+#### Git
+[Git](https://git-scm.com/) was used for version control by utilizing the Gitpod terminal to add and commit to Git and push to GitHub.
+
+#### GitHub
+[GitHub](https://github.com/) is used to store the project.
+
+### Wireframing & ERD
+
+#### Figma
+
+
+### Languages used
+
+#### HTML
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+#### CSS
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+#### JavaScript
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+#### Python
+- [Python](https://www.python.org/)
