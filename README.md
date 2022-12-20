@@ -1,12 +1,12 @@
 <!-- Heading -->
 
-# sonicetones - [Live link](https://sonictones-pp4.herokuapp.com/)
+# sonicetones - [Live link]()
 
-_On sonicetones you will find reviews of the latest and greatest new music releases. Whether you are a casual listener or a die-hard music fan, I hope that you will find something here that resonates with you._
+_On __sonicetones__ you will find reviews of the latest and greatest new music releases. Whether you are a casual listener or a die-hard music fan, I hope that you will find something here that resonates with you._
 
 sonictones is a fully responsive music blog website, It is a place where users can sign up and engage in conversations about new music. They also have the ability to like posts and bookmark blog posts for later.
 
-<!-- Responsive Image -->
+<img width="1792" alt="Home page" src="https://user-images.githubusercontent.com/96183912/208785803-44839a90-2fc8-4c0a-a376-6326248e5d0e.png">
 
 ## User Experience
 ### User Stories
@@ -47,6 +47,8 @@ __As an administrator:__
 ### Color Scheme
 The main colors used throughout the blog were black, white, and grey. This creates a clean and easy-to-navigate look for the blog. The use of black for the navbar helps to create a cohesive and unified look, while the use of white for the text and buttons makes it easy for readers to find what they need. The use of grey adds a sense of sophistication and professionalism to the design.
 
+<img width="1071" alt="Color palette" src="https://user-images.githubusercontent.com/96183912/208786243-682bacdd-4814-441b-911e-95da0f6ff622.png">
+
 ### Typography
 The main font used is called 'Playfair Display'
 > Playfair is a transitional font from the 18th century that features high-contrast, delicate hairlines. It was influenced by the change from broad nib quills to pointed steel pens and advances in printing technology.
@@ -64,15 +66,15 @@ The wireframes were made in Figma.
 ## Agile
 The project management tool used was GitHub project board.
 
-<!-- Add Agile github board picture here -->
+<img width="1105" alt="User Stories GitHub" src="https://user-images.githubusercontent.com/96183912/208786446-feeeef60-ebdd-4cb0-8350-bc74206bdfb5.png">
 
 Throughout the development process, the stories were constantly updated according to the progress and pushed into the right cloumn.
 
 
 ## Database ERD
-<!-- databas image here -->
--- 
--- 
+
+![ERD](https://user-images.githubusercontent.com/96183912/208786740-630053ee-f50b-4959-924b-58c5b67b5984.jpg)
+
 ### Database
 
  - The database is a PostgreSQL database, hosted on [ElephantSQL](https://www.elephantsql.com/).
@@ -226,9 +228,6 @@ I checked for errors in these files:
 - views.py - _no errors_
 
 The remaning .py files (settings.py and env.py etc) have errors about lines being too long, this cannot really be fixed.
-
-### Lighthouse
-<!-- Lighthouse picture here -->
 
 
 ## Manual Testing
